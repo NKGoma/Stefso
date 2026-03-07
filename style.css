@@ -1,0 +1,532 @@
+/* =============================================
+   El Cuento de Steffi — Style Sheet
+   ============================================= */
+
+/* --- Custom Properties ---------------------- */
+:root {
+  --color-primary:  #FF6B6B;
+  --color-accent:   #FFD93D;
+  --color-sky:      #87CEEB;
+  --color-grass:    #7EC850;
+  --color-sand:     #C4A882;
+  --color-stone:    #9E9E9E;
+  --color-bg:       #FFF8F0;
+  --color-text:     #3D2B1F;
+  --color-hint:     #8B6F5E;
+  --color-card-bg:  #FFFFFF;
+  --color-selected: #FF6B6B;
+  --radius:         16px;
+  --shadow:         0 4px 20px rgba(61,43,31,0.12);
+  --font:           'Nunito', system-ui, sans-serif;
+}
+
+/* --- Reset & Base ---------------------------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  font-family: var(--font);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* --- Screen Management ---------------------- */
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  animation: fadeIn 0.4s ease;
+}
+
+.screen.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Typography ----------------------------- */
+h1 {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 900;
+  color: var(--color-primary);
+  text-shadow: 2px 2px 0 rgba(255,107,107,0.2);
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: clamp(1.3rem, 4vw, 2rem);
+  font-weight: 800;
+  color: var(--color-text);
+  margin-bottom: 0.4rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-hint);
+  margin-bottom: 1.5rem;
+}
+
+p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 1rem;
+}
+
+/* --- Buttons -------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2.2rem;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font);
+  font-size: 1.2rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(255,107,107,0.4);
+  letter-spacing: 0.02em;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255,107,107,0.5);
+}
+
+.btn:active { transform: translateY(0); }
+
+.btn-secondary {
+  background: var(--color-accent);
+  color: var(--color-text);
+  box-shadow: 0 4px 16px rgba(255,217,61,0.4);
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 8px 24px rgba(255,217,61,0.5);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-primary);
+  box-shadow: none;
+  border: 2.5px solid var(--color-primary);
+}
+
+.btn-outline:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+/* --- Progress Bar --------------------------- */
+.progress-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.progress-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ddd;
+  transition: background 0.3s;
+}
+
+.progress-dot.done  { background: var(--color-primary); }
+.progress-dot.active { background: var(--color-accent); transform: scale(1.3); }
+
+/* --- Choice Cards --------------------------- */
+.cards-row {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+
+.card {
+  background: var(--color-card-bg);
+  border: 3px solid transparent;
+  border-radius: var(--radius);
+  padding: 1.5rem 1.2rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
+  box-shadow: var(--shadow);
+  min-width: 140px;
+  max-width: 200px;
+  flex: 1;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 28px rgba(61,43,31,0.18);
+}
+
+.card.selected {
+  border-color: var(--color-selected);
+  background: #FFF0F0;
+  transform: translateY(-5px);
+}
+
+.card svg {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 0.8rem;
+}
+
+.card-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.card-hint {
+  font-size: 0.85rem;
+  color: var(--color-hint);
+  font-style: italic;
+}
+
+/* --- Vocabulary Hints ----------------------- */
+.vocab-word {
+  font-weight: 800;
+  color: var(--color-primary);
+}
+
+.vocab-hint {
+  font-size: 0.85em;
+  color: var(--color-hint);
+  font-style: italic;
+  margin-left: 0.2em;
+}
+
+.vocab-card {
+  background: linear-gradient(135deg, #FFF0F0, #FFF8E1);
+  border: 2px solid var(--color-accent);
+  border-radius: var(--radius);
+  padding: 1rem 1.4rem;
+  text-align: left;
+  max-width: 320px;
+  margin: 1.5rem auto 0;
+}
+
+.vocab-card-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-hint);
+  margin-bottom: 0.3rem;
+}
+
+.vocab-card-word {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.vocab-card-translation {
+  font-size: 1rem;
+  color: var(--color-hint);
+  font-style: italic;
+}
+
+/* --- Story Choices Screen ------------------- */
+.choice-question {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  max-width: 500px;
+}
+
+.choice-step-count {
+  font-size: 0.9rem;
+  color: var(--color-hint);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.choice-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-width: 420px;
+}
+
+.choice-btn {
+  padding: 1rem 1.5rem;
+  border: 2.5px solid #e8e0d8;
+  border-radius: var(--radius);
+  background: var(--color-card-bg);
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.2s, background 0.2s, transform 0.15s;
+  box-shadow: var(--shadow);
+}
+
+.choice-btn:hover {
+  border-color: var(--color-primary);
+  background: #FFF0F0;
+  transform: translateX(6px);
+}
+
+/* --- Storybook Screen ----------------------- */
+#screen-storybook {
+  padding: 1.5rem;
+  justify-content: flex-start;
+  padding-top: 2rem;
+}
+
+.book-header {
+  margin-bottom: 1.5rem;
+}
+
+.book-title {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.page-counter {
+  font-size: 0.9rem;
+  color: var(--color-hint);
+  font-weight: 700;
+  margin-top: 0.3rem;
+}
+
+.book-page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 900px;
+  width: 100%;
+  background: var(--color-card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  animation: pageIn 0.5s ease;
+  min-height: 360px;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.book-scene {
+  background: var(--color-sky);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+  overflow: hidden;
+}
+
+.book-scene svg {
+  width: 100%;
+  height: 100%;
+}
+
+.book-text-panel {
+  padding: 2rem 2rem 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: left;
+}
+
+.book-story-text {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.book-nav {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+/* --- Birthday Surprise Screen --------------- */
+#screen-surprise {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.surprise-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.surprise-title {
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  font-weight: 900;
+  color: var(--color-accent);
+  text-shadow: 0 0 30px rgba(255,217,61,0.6);
+  margin-bottom: 0.5rem;
+}
+
+.surprise-age {
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: #fff;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+.surprise-message {
+  background: rgba(255,255,255,0.1);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius);
+  padding: 1.8rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-align: left;
+  backdrop-filter: blur(10px);
+}
+
+.confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+  0%   { transform: translateY(-20px) rotate(0deg);   opacity: 1; }
+  100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+/* --- SVG Animations ------------------------- */
+.flame {
+  transform-origin: bottom center;
+  animation: flicker 0.8s ease-in-out infinite alternate;
+}
+
+.flame:nth-child(odd)  { animation-duration: 0.7s; animation-delay: -0.3s; }
+.flame:nth-child(even) { animation-duration: 0.9s; animation-delay: -0.1s; }
+
+@keyframes flicker {
+  0%   { transform: scaleY(1) rotate(-3deg); opacity: 1; }
+  100% { transform: scaleY(0.8) rotate(3deg); opacity: 0.75; }
+}
+
+.cloud {
+  animation: drift 4s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  from { transform: translateX(-8px); }
+  to   { transform: translateX(8px); }
+}
+
+.star-twinkle {
+  animation: twinkle 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from { opacity: 1; }
+  to   { opacity: 0.15; }
+}
+
+.star-twinkle:nth-child(2n)   { animation-duration: 2.1s; animation-delay: -0.8s; }
+.star-twinkle:nth-child(3n)   { animation-duration: 1.3s; animation-delay: -0.4s; }
+.star-twinkle:nth-child(5n)   { animation-duration: 1.8s; animation-delay: -1.1s; }
+
+.dog-tail {
+  transform-origin: 10% 50%;
+  animation: wag 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes wag {
+  from { transform: rotate(-15deg); }
+  to   { transform: rotate(15deg); }
+}
+
+/* --- Welcome Screen decorations ------------- */
+#screen-welcome {
+  background: linear-gradient(160deg, #1a1a2e 0%, #16213e 100%);
+  color: white;
+}
+
+#screen-welcome h1 { color: var(--color-accent); }
+#screen-welcome h3 { color: rgba(255,255,255,0.7); font-size: 1.1rem; }
+#screen-welcome p  { color: rgba(255,255,255,0.85); }
+
+.welcome-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.5);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.cake-container {
+  margin: 1.5rem auto;
+}
+
+/* --- Responsive ----------------------------- */
+@media (max-width: 640px) {
+  .book-page {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .book-scene { min-height: 220px; }
+
+  .book-text-panel {
+    padding: 1.5rem;
+  }
+
+  .cards-row {
+    gap: 0.8rem;
+  }
+
+  .card {
+    min-width: 110px;
+    padding: 1rem 0.8rem;
+  }
+
+  .card svg {
+    width: 60px;
+    height: 60px;
+  }
+}

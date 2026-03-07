@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Cuento de Steffi 🐕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+<!-- ================================================
+     SCREEN 0 — WELCOME
+     ================================================ -->
+<section class="screen" id="screen-welcome">
+  <div class="cake-container">
+    <!-- Birthday Cake SVG -->
+    <svg width="160" height="200" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Birthday cake">
+      <!-- Stars background -->
+      <circle class="star-twinkle" cx="15"  cy="20" r="2.5" fill="#FFD93D" />
+      <circle class="star-twinkle" cx="140" cy="15" r="2"   fill="#FFD93D" />
+      <circle class="star-twinkle" cx="130" cy="40" r="1.5" fill="#FFD93D" />
+      <circle class="star-twinkle" cx="25"  cy="50" r="2"   fill="#FFD93D" />
+      <circle class="star-twinkle" cx="155" cy="70" r="1.5" fill="#FFD93D" />
+      <circle class="star-twinkle" cx="5"   cy="80" r="2"   fill="#FFD93D" />
+
+      <!-- Candles (5) -->
+      <rect x="32"  y="80" width="8" height="30" rx="3" fill="#FF6B6B" />
+      <rect x="52"  y="75" width="8" height="35" rx="3" fill="#4D96FF" />
+      <rect x="72"  y="72" width="8" height="38" rx="3" fill="#6BCB77" />
+      <rect x="92"  y="75" width="8" height="35" rx="3" fill="#FF922B" />
+      <rect x="112" y="80" width="8" height="30" rx="3" fill="#CC5DE8" />
+
+      <!-- Flames -->
+      <ellipse class="flame" cx="36"  cy="79" rx="5" ry="9" fill="#FFD93D" />
+      <ellipse class="flame" cx="56"  cy="74" rx="5" ry="9" fill="#FFD93D" />
+      <ellipse class="flame" cx="76"  cy="71" rx="5" ry="9" fill="#FFD93D" />
+      <ellipse class="flame" cx="96"  cy="74" rx="5" ry="9" fill="#FFD93D" />
+      <ellipse class="flame" cx="116" cy="79" rx="5" ry="9" fill="#FFD93D" />
+      <!-- Flame inner glow -->
+      <ellipse class="flame" cx="36"  cy="81" rx="2.5" ry="5" fill="#FF6B6B" opacity="0.7" />
+      <ellipse class="flame" cx="56"  cy="76" rx="2.5" ry="5" fill="#FF6B6B" opacity="0.7" />
+      <ellipse class="flame" cx="76"  cy="73" rx="2.5" ry="5" fill="#FF6B6B" opacity="0.7" />
+      <ellipse class="flame" cx="96"  cy="76" rx="2.5" ry="5" fill="#FF6B6B" opacity="0.7" />
+      <ellipse class="flame" cx="116" cy="81" rx="2.5" ry="5" fill="#FF6B6B" opacity="0.7" />
+
+      <!-- Top tier (smallest) -->
+      <rect x="40" y="108" width="80" height="30" rx="8" fill="#FF6B6B" />
+      <rect x="40" y="108" width="80" height="10" rx="8" fill="#FF8E8E" />
+      <!-- Decorations on top tier -->
+      <circle cx="65"  cy="123" r="4" fill="#FFD93D" />
+      <circle cx="80"  cy="123" r="4" fill="#fff" />
+      <circle cx="95"  cy="123" r="4" fill="#FFD93D" />
+
+      <!-- Middle tier -->
+      <rect x="20" y="138" width="120" height="34" rx="8" fill="#FF922B" />
+      <rect x="20" y="138" width="120" height="10" rx="8" fill="#FFB347" />
+      <!-- Decorations on middle tier -->
+      <circle cx="50"  cy="155" r="5" fill="#fff" />
+      <circle cx="80"  cy="155" r="5" fill="#FFD93D" />
+      <circle cx="110" cy="155" r="5" fill="#fff" />
+
+      <!-- Bottom tier (biggest) -->
+      <rect x="5" y="172" width="150" height="22" rx="8" fill="#CC5DE8" />
+      <rect x="5" y="172" width="150" height="10" rx="8" fill="#DA77F2" />
+      <!-- Decorations on bottom tier -->
+      <circle cx="30"  cy="185" r="4" fill="#FFD93D" />
+      <circle cx="55"  cy="185" r="4" fill="#fff" />
+      <circle cx="80"  cy="185" r="4" fill="#FFD93D" />
+      <circle cx="105" cy="185" r="4" fill="#fff" />
+      <circle cx="130" cy="185" r="4" fill="#FFD93D" />
+
+      <!-- Plate -->
+      <ellipse cx="80" cy="194" rx="80" ry="6" fill="rgba(255,255,255,0.2)" />
+    </svg>
+  </div>
+
+  <h1>¡Feliz Cumpleaños!</h1>
+  <h2 style="color:white; font-size:2.5rem;">Steffi 🎉</h2>
+  <p>¡32 años de pura maravilla! <span style="opacity:0.6">(32 years of pure wonder!)</span></p>
+  <p class="welcome-subtitle">Hoy escribes tu propio cuento en español…<br>(Today you write your own story in Spanish…)</p>
+  <button class="btn" id="btn-start">¡Empezamos! <span style="font-weight:400; font-size:0.85em">(Let's begin!)</span></button>
+</section>
+
+
+<!-- ================================================
+     SCREEN 1 — CHOOSE YOUR HERO
+     ================================================ -->
+<section class="screen" id="screen-hero">
+  <h2>¿Quién es la heroína?</h2>
+  <h3>Who is the hero of your story?</h3>
+
+  <div class="cards-row">
+    <!-- Card: Steffi -->
+    <div class="card" data-value="Steffi">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <!-- Swiss cap with colors -->
+        <ellipse cx="40" cy="24" rx="18" ry="12" fill="#FF6B6B" />
+        <rect x="22" y="24" width="36" height="6" rx="2" fill="#CC0000" />
+        <!-- White cross on cap -->
+        <rect x="37" y="16" width="6" height="14" rx="1" fill="white" />
+        <rect x="31" y="21" width="18" height="4" rx="1" fill="white" />
+        <!-- Face -->
+        <circle cx="40" cy="44" r="16" fill="#FDBCB4" />
+        <!-- Eyes -->
+        <circle cx="34" cy="42" r="2.5" fill="#5D3A1A" />
+        <circle cx="46" cy="42" r="2.5" fill="#5D3A1A" />
+        <circle cx="35" cy="41" r="1" fill="white" />
+        <circle cx="47" cy="41" r="1" fill="white" />
+        <!-- Smile -->
+        <path d="M34 51 Q40 57 46 51" stroke="#5D3A1A" stroke-width="2" fill="none" stroke-linecap="round" />
+        <!-- Hair -->
+        <ellipse cx="40" cy="30" rx="17" ry="6" fill="#8B4513" />
+        <ellipse cx="27" cy="40" rx="5" ry="12" fill="#8B4513" />
+        <ellipse cx="53" cy="40" rx="5" ry="12" fill="#8B4513" />
+        <!-- Blush -->
+        <ellipse cx="30" cy="48" rx="5" ry="3" fill="#FFB3C1" opacity="0.6" />
+        <ellipse cx="50" cy="48" rx="5" ry="3" fill="#FFB3C1" opacity="0.6" />
+      </svg>
+      <span class="card-name">Steffi</span>
+      <span class="card-hint">¡Tú misma! (You!)</span>
+    </div>
+
+    <!-- Card: La Aventurera -->
+    <div class="card" data-value="La Aventurera">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <!-- Explorer hat -->
+        <ellipse cx="40" cy="22" rx="20" ry="8" fill="#C4A882" />
+        <rect x="25" y="22" width="30" height="10" rx="3" fill="#A0784A" />
+        <rect x="20" y="28" width="40" height="4" rx="2" fill="#C4A882" />
+        <!-- Face -->
+        <circle cx="40" cy="47" r="16" fill="#FDBCB4" />
+        <!-- Eyes — adventurous squint -->
+        <ellipse cx="34" cy="44" rx="3" ry="2" fill="#2E4A1E" />
+        <ellipse cx="46" cy="44" rx="3" ry="2" fill="#2E4A1E" />
+        <!-- Determined smile -->
+        <path d="M34 52 Q40 58 46 52" stroke="#5D3A1A" stroke-width="2" fill="none" stroke-linecap="round" />
+        <!-- Scarf -->
+        <rect x="28" y="60" width="24" height="8" rx="3" fill="#FF6B6B" />
+        <!-- Freckles -->
+        <circle cx="33" cy="49" r="1.2" fill="#D4956A" />
+        <circle cx="37" cy="51" r="1.2" fill="#D4956A" />
+        <circle cx="43" cy="51" r="1.2" fill="#D4956A" />
+        <circle cx="47" cy="49" r="1.2" fill="#D4956A" />
+      </svg>
+      <span class="card-name">La Aventurera</span>
+      <span class="card-hint">(The Adventurer)</span>
+    </div>
+
+    <!-- Card: La Princesa -->
+    <div class="card" data-value="La Princesa">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <!-- Crown -->
+        <polygon points="22,26 28,16 34,24 40,12 46,24 52,16 58,26" fill="#FFD93D" />
+        <rect x="22" y="24" width="36" height="8" rx="2" fill="#FFD93D" />
+        <!-- Crown gems -->
+        <circle cx="34" cy="24" r="3" fill="#FF6B6B" />
+        <circle cx="40" cy="20" r="3" fill="#4D96FF" />
+        <circle cx="46" cy="24" r="3" fill="#6BCB77" />
+        <!-- Face -->
+        <circle cx="40" cy="50" r="16" fill="#FDBCB4" />
+        <!-- Long hair -->
+        <ellipse cx="40" cy="36" rx="17" ry="6" fill="#D4A017" />
+        <ellipse cx="26" cy="52" rx="6" ry="18" fill="#D4A017" />
+        <ellipse cx="54" cy="52" rx="6" ry="18" fill="#D4A017" />
+        <!-- Eyes -->
+        <circle cx="35" cy="48" r="3" fill="#8B4513" />
+        <circle cx="45" cy="48" r="3" fill="#8B4513" />
+        <circle cx="36" cy="47" r="1.2" fill="white" />
+        <circle cx="46" cy="47" r="1.2" fill="white" />
+        <!-- Gentle smile -->
+        <path d="M35 55 Q40 60 45 55" stroke="#5D3A1A" stroke-width="2" fill="none" stroke-linecap="round" />
+        <!-- Blush -->
+        <ellipse cx="31" cy="53" rx="5" ry="3" fill="#FFB3C1" opacity="0.7" />
+        <ellipse cx="49" cy="53" rx="5" ry="3" fill="#FFB3C1" opacity="0.7" />
+      </svg>
+      <span class="card-name">La Princesa</span>
+      <span class="card-hint">(The Princess)</span>
+    </div>
+  </div>
+
+  <button class="btn" id="btn-hero-next">Siguiente → <span style="font-weight:400;font-size:0.85em">(Next)</span></button>
+</section>
+
+
+<!-- ================================================
+     SCREEN 2 — CHOOSE A SIDEKICK
+     ================================================ -->
+<section class="screen" id="screen-sidekick">
+  <h2>¿Y su compañero?</h2>
+  <h3>Every hero needs a companion!</h3>
+
+  <div class="cards-row">
+    <!-- Card: Guau -->
+    <div class="card" data-value="Guau">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <!-- Dog body -->
+        <ellipse cx="40" cy="58" rx="24" ry="16" fill="#C4A882" />
+        <!-- Dog head -->
+        <circle cx="40" cy="36" r="18" fill="#C4A882" />
+        <!-- Ears -->
+        <ellipse cx="24" cy="28" rx="8" ry="14" fill="#A0784A" transform="rotate(-15 24 28)" />
+        <ellipse cx="56" cy="28" rx="8" ry="14" fill="#A0784A" transform="rotate(15 56 28)" />
+        <!-- Snout -->
+        <ellipse cx="40" cy="44" rx="10" ry="7" fill="#FDBCB4" />
+        <!-- Nose -->
+        <ellipse cx="40" cy="39" rx="5" ry="4" fill="#5D3A1A" />
+        <circle cx="38" cy="38" r="1.5" fill="white" />
+        <!-- Eyes -->
+        <circle cx="32" cy="33" r="4" fill="#5D3A1A" />
+        <circle cx="48" cy="33" r="4" fill="#5D3A1A" />
+        <circle cx="33" cy="32" r="1.5" fill="white" />
+        <circle cx="49" cy="32" r="1.5" fill="white" />
+        <!-- Tongue -->
+        <ellipse cx="40" cy="49" rx="5" ry="4" fill="#FF6B6B" />
+        <!-- Tail -->
+        <path class="dog-tail" d="M62 58 Q75 45 70 35" stroke="#C4A882" stroke-width="8" fill="none" stroke-linecap="round" />
+        <!-- Collar -->
+        <rect x="28" y="50" width="24" height="6" rx="3" fill="#FF6B6B" />
+        <circle cx="40" cy="53" r="2.5" fill="#FFD93D" />
+      </svg>
+      <span class="card-name">Guau el perro</span>
+      <span class="card-hint">¡Guau! <em>(Wuff! — in Spanish)</em></span>
+    </div>
+
+    <!-- Card: Ramón -->
+    <div class="card" data-value="Ramón">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <!-- Knight helmet -->
+        <rect x="22" y="14" width="36" height="30" rx="8" fill="#9E9E9E" />
+        <rect x="22" y="14" width="36" height="10" rx="6" fill="#BDBDBD" />
+        <!-- Visor slit -->
+        <rect x="28" y="28" width="24" height="5" rx="2" fill="#424242" />
+        <!-- Plume -->
+        <ellipse cx="40" cy="10" rx="6" ry="10" fill="#FF6B6B" />
+        <!-- Face -->
+        <circle cx="40" cy="52" r="14" fill="#FDBCB4" />
+        <!-- Eyes -->
+        <circle cx="35" cy="50" r="2.5" fill="#2E4A1E" />
+        <circle cx="45" cy="50" r="2.5" fill="#2E4A1E" />
+        <!-- Brave smile -->
+        <path d="M34 57 Q40 62 46 57" stroke="#5D3A1A" stroke-width="2" fill="none" stroke-linecap="round" />
+        <!-- Moustache (for Roman charm) -->
+        <path d="M33 54 Q37 57 40 54 Q43 57 47 54" stroke="#5D3A1A" stroke-width="2.5" fill="none" stroke-linecap="round" />
+        <!-- Shield -->
+        <path d="M55 60 L65 60 L65 72 L60 78 L55 72 Z" fill="#4D96FF" />
+        <path d="M55 60 L65 60 L65 72 L60 78 L55 72 Z" fill="none" stroke="white" stroke-width="1.5" />
+      </svg>
+      <span class="card-name">Ramón el valiente</span>
+      <span class="card-hint">(The brave one — ¡como Roman!)</span>
+    </div>
+  </div>
+
+  <button class="btn" id="btn-sidekick-next">Siguiente →</button>
+</section>
+
+
+<!-- ================================================
+     SCREEN 3 — CHOOSE YOUR WORLD
+     ================================================ -->
+<section class="screen" id="screen-setting">
+  <h2>¿Dónde ocurre la historia?</h2>
+  <h3>Where does the story happen?</h3>
+
+  <div class="cards-row">
+    <!-- Card: Swiss Alps -->
+    <div class="card" data-value="alps">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sky -->
+        <rect width="80" height="80" fill="#87CEEB" />
+        <!-- Cloud -->
+        <ellipse class="cloud" cx="55" cy="18" rx="16" ry="8" fill="white" />
+        <ellipse class="cloud" cx="62" cy="15" rx="10" ry="7" fill="white" />
+        <!-- Mountains -->
+        <polygon points="0,80 25,30 50,80"  fill="#A8A8A8" />
+        <polygon points="20,80 50,20 80,80" fill="#D0D0D0" />
+        <!-- Snow caps -->
+        <polygon points="25,30 18,50 32,50"  fill="white" />
+        <polygon points="50,20 41,45 59,45"  fill="white" />
+        <!-- Ground -->
+        <rect x="0" y="64" width="80" height="16" fill="#7EC850" />
+        <!-- Chalet -->
+        <rect x="5" y="58" width="18" height="12" fill="#8B4513" />
+        <polygon points="3,58 23,58 13,48" fill="#CC0000" />
+        <!-- Windows -->
+        <rect x="9"  y="60" width="5" height="5" rx="1" fill="#87CEEB" />
+        <rect x="16" y="60" width="5" height="5" rx="1" fill="#87CEEB" />
+      </svg>
+      <span class="card-name">Los Alpes Suizos</span>
+      <span class="card-hint">(The Swiss Alps)</span>
+    </div>
+
+    <!-- Card: Egyptian Pyramids -->
+    <div class="card" data-value="pyramids">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sky gradient -->
+        <defs>
+          <linearGradient id="desertSky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="#FF7F50" />
+            <stop offset="100%" stop-color="#FFD93D" />
+          </linearGradient>
+        </defs>
+        <rect width="80" height="80" fill="url(#desertSky)" />
+        <!-- Stars (shown when night) -->
+        <circle class="star-twinkle" cx="10" cy="8"  r="1.5" fill="white" />
+        <circle class="star-twinkle" cx="25" cy="5"  r="1.5" fill="white" />
+        <circle class="star-twinkle" cx="55" cy="10" r="1.5" fill="white" />
+        <circle class="star-twinkle" cx="70" cy="6"  r="1.5" fill="white" />
+        <!-- Sand -->
+        <rect x="0" y="60" width="80" height="20" fill="#C4A882" />
+        <!-- Pyramids -->
+        <polygon points="5,60 30,20 55,60"  fill="#B8975A" />
+        <polygon points="5,60 30,20 55,60"  fill="none" stroke="#A07840" stroke-width="1" />
+        <polygon points="35,60 55,32 75,60" fill="#C9A96E" />
+        <polygon points="35,60 55,32 75,60" fill="none" stroke="#A07840" stroke-width="1" />
+        <!-- Shadow sides -->
+        <polygon points="30,20 55,60 42,60" fill="#A07840" opacity="0.4" />
+        <!-- Camel (simplified) -->
+        <ellipse cx="18" cy="62" rx="9" ry="5"  fill="#D4956A" />
+        <ellipse cx="22" cy="57" rx="5" ry="4"  fill="#D4956A" />
+        <circle  cx="26" cy="54" r="3"           fill="#D4956A" />
+        <!-- Hump -->
+        <ellipse cx="16" cy="56" rx="5" ry="4" fill="#C4824A" />
+        <!-- Legs -->
+        <rect x="11" y="65" width="3" height="7" rx="1" fill="#D4956A" />
+        <rect x="16" y="65" width="3" height="7" rx="1" fill="#D4956A" />
+        <rect x="21" y="65" width="3" height="7" rx="1" fill="#D4956A" />
+      </svg>
+      <span class="card-name">Las Pirámides</span>
+      <span class="card-hint">(The Pyramids of Egypt)</span>
+    </div>
+
+    <!-- Card: Vaduz Castle -->
+    <div class="card" data-value="castle">
+      <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <!-- Sky -->
+        <defs>
+          <linearGradient id="castleSky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%"   stop-color="#4D96FF" />
+            <stop offset="100%" stop-color="#87CEEB" />
+          </linearGradient>
+        </defs>
+        <rect width="80" height="80" fill="url(#castleSky)" />
+        <!-- Mountain silhouette -->
+        <polygon points="0,80 30,40 60,80"   fill="#6B8F71" opacity="0.5" />
+        <polygon points="25,80 55,30 80,80"  fill="#5A7A60" opacity="0.5" />
+        <!-- Ground -->
+        <rect x="0" y="65" width="80" height="15" fill="#7EC850" />
+        <!-- Castle body -->
+        <rect x="25" y="40" width="30" height="30" fill="#B0B0B0" />
+        <!-- Tower left -->
+        <rect x="18" y="30" width="16" height="40" rx="2" fill="#9E9E9E" />
+        <!-- Tower right -->
+        <rect x="46" y="30" width="16" height="40" rx="2" fill="#9E9E9E" />
+        <!-- Crenellations left tower -->
+        <rect x="18" y="25" width="4" height="8" fill="#9E9E9E" />
+        <rect x="24" y="25" width="4" height="8" fill="#9E9E9E" />
+        <rect x="30" y="25" width="4" height="8" fill="#9E9E9E" />
+        <!-- Crenellations right tower -->
+        <rect x="46" y="25" width="4" height="8" fill="#9E9E9E" />
+        <rect x="52" y="25" width="4" height="8" fill="#9E9E9E" />
+        <rect x="58" y="25" width="4" height="8" fill="#9E9E9E" />
+        <!-- Gate arch -->
+        <rect  x="33" y="52" width="14" height="18" rx="7" fill="#424242" />
+        <!-- Windows -->
+        <rect x="22" y="38" width="8" height="8" rx="2" fill="#87CEEB" />
+        <rect x="50" y="38" width="8" height="8" rx="2" fill="#87CEEB" />
+        <!-- Liechtenstein flag (blue & red) -->
+        <rect x="61" y="20" width="14" height="7" fill="#002B7F" rx="1" />
+        <rect x="61" y="27" width="14" height="7" fill="#CE1126" rx="1" />
+        <!-- Crown on flag -->
+        <polygon points="63,23 65,20 67,23 69,20 71,23" fill="#FFD93D" />
+        <!-- Flag pole -->
+        <rect x="60" y="14" width="2" height="22" fill="#8B4513" />
+      </svg>
+      <span class="card-name">El Castillo de Vaduz</span>
+      <span class="card-hint">(Vaduz Castle, Liechtenstein)</span>
+    </div>
+  </div>
+
+  <button class="btn" id="btn-setting-next">Siguiente →</button>
+</section>
+
+
+<!-- ================================================
+     SCREEN 4 — STORY CHOICES
+     ================================================ -->
+<section class="screen" id="screen-choices">
+  <div class="progress-bar" id="choice-progress"></div>
+  <p class="choice-step-count" id="choice-step-count">Paso 1 de 3</p>
+  <h2 class="choice-question" id="choice-question"></h2>
+  <p style="color:var(--color-hint); font-style:italic; margin-bottom:1.5rem;" id="choice-subtitle"></p>
+  <div class="choice-options" id="choice-options"></div>
+</section>
+
+
+<!-- ================================================
+     SCREEN 5 — STORYBOOK
+     ================================================ -->
+<section class="screen" id="screen-storybook">
+  <div class="book-header">
+    <div class="book-title">📖 El Cuento de Steffi</div>
+    <div class="page-counter" id="page-counter">Página 1 de 4</div>
+  </div>
+
+  <div class="book-page" id="book-page">
+    <div class="book-scene" id="book-scene">
+      <!-- SVG scene injected by JS -->
+    </div>
+    <div class="book-text-panel">
+      <p class="book-story-text" id="book-story-text"></p>
+      <div class="vocab-card" id="book-vocab-card">
+        <div class="vocab-card-label">🌟 La palabra de hoy (Word of the day)</div>
+        <div class="vocab-card-word"></div>
+        <div class="vocab-card-translation"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="book-nav">
+    <button class="btn btn-outline" id="btn-prev-page">← Anterior</button>
+    <button class="btn" id="btn-next-page">Siguiente →</button>
+    <button class="btn btn-secondary" id="btn-celebrate" style="display:none">¡Celebrar! 🎉</button>
+  </div>
+</section>
+
+
+<!-- ================================================
+     SCREEN 6 — BIRTHDAY SURPRISE
+     ================================================ -->
+<section class="screen" id="screen-surprise">
+  <div id="confetti-container" class="confetti-container"></div>
+
+  <div class="surprise-content">
+    <div class="surprise-title">¡Feliz<br>Cumpleaños!</div>
+    <div class="surprise-age">32 años de aventuras increíbles ✨<br><span style="font-size:0.8em; opacity:0.7">(32 years of incredible adventures)</span></div>
+
+    <div class="surprise-message">
+      <p>🌍 <strong>Querida Steffi,</strong></p>
+      <br>
+      <p>De las montañas de Suiza a las pirámides de Egipto,
+      del castillo de Vaduz a las calles de Madrid —
+      eres la heroína de tu propio cuento.</p>
+      <br>
+      <p><em>(From the mountains of Switzerland to the pyramids of Egypt,
+      from Vaduz castle to the streets of Madrid —
+      you are the hero of your own story.)</em></p>
+      <br>
+      <p>¡Que los 32 sean llenos de <strong>aventuras</strong> <span class="vocab-hint">(adventures)</span>,
+      <strong>alegría</strong> <span class="vocab-hint">(joy)</span>
+      y muchos <strong>«¡Guau!»</strong> <span class="vocab-hint">(Wuffs!)</span>!</p>
+      <br>
+      <p>Con todo el cariño <span class="vocab-hint">(with all the love)</span>,<br>
+      <strong>¡Tu amigo/a que te quiere mucho! 🐕🎂</strong></p>
+    </div>
+
+    <button class="btn btn-secondary" id="btn-play-again">
+      ¡Jugar otra vez! <span style="font-weight:400;font-size:0.85em">(Play again!)</span>
+    </button>
+  </div>
+</section>
+
+
+<!-- ================================================
+     SVG SCENE TEMPLATES
+     ================================================ -->
+
+<!-- Scene: Setting (adapts to chosen setting) -->
+<template id="scene-alps">
+  <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <!-- Swiss Alps variant (default) -->
+    <defs>
+      <linearGradient id="alpsSky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#4FC3F7" />
+        <stop offset="100%" stop-color="#87CEEB" />
+      </linearGradient>
+    </defs>
+    <rect width="300" height="220" fill="url(#alpsSky)" />
+
+    <!-- Sun -->
+    <circle cx="250" cy="40" r="25" fill="#FFD93D" opacity="0.9" />
+    <circle cx="250" cy="40" r="18" fill="#FFE55C" />
+
+    <!-- Cloud -->
+    <ellipse class="cloud" cx="100" cy="35" rx="35" ry="15" fill="white" opacity="0.9" />
+    <ellipse class="cloud" cx="115" cy="28" rx="22" ry="14" fill="white" opacity="0.9" />
+    <ellipse class="cloud" cx="80"  cy="30" rx="18" ry="12" fill="white" opacity="0.9" />
+
+    <!-- Back mountain -->
+    <polygon points="0,220 80,60 160,220"   fill="#B0B8C0" />
+    <polygon points="100,220 200,40 300,220" fill="#C8CDD2" />
+    <!-- Snow caps -->
+    <polygon points="80,60 65,100 95,100"   fill="white" opacity="0.95" />
+    <polygon points="200,40 178,90 222,90"  fill="white" opacity="0.95" />
+
+    <!-- Green ground -->
+    <rect x="0" y="175" width="300" height="45" fill="#7EC850" />
+    <!-- Ground shadow -->
+    <rect x="0" y="175" width="300" height="8" fill="#5FA840" opacity="0.5" />
+
+    <!-- Pine trees -->
+    <polygon points="20,175 32,140 44,175"  fill="#2E7D32" />
+    <polygon points="26,175 32,148 38,175"  fill="#388E3C" />
+    <rect x="30" y="172" width="4" height="10" fill="#5D3A1A" />
+
+    <polygon points="255,175 267,140 279,175" fill="#2E7D32" />
+    <polygon points="261,175 267,148 273,175" fill="#388E3C" />
+    <rect x="265" y="172" width="4" height="10" fill="#5D3A1A" />
+
+    <!-- Chalet -->
+    <rect x="60" y="148" width="50" height="35" fill="#8B4513" />
+    <polygon points="55,148 115,148 85,120"   fill="#CC0000" />
+    <!-- Windows -->
+    <rect x="66" y="158" width="12" height="12" rx="2" fill="#87CEEB" />
+    <rect x="92" y="158" width="12" height="12" rx="2" fill="#87CEEB" />
+    <!-- Door -->
+    <rect x="79" y="162" width="12" height="21" rx="3" fill="#A0784A" />
+
+    <!-- Flowers -->
+    <circle cx="130" cy="178" r="4" fill="#FF6B6B" />
+    <circle cx="140" cy="176" r="4" fill="#FFD93D" />
+    <circle cx="150" cy="178" r="4" fill="#FF6B6B" />
+    <circle cx="160" cy="177" r="4" fill="#CC5DE8" />
+    <rect x="130" y="178" width="2" height="10" fill="#5FA840" />
+    <rect x="140" y="176" width="2" height="10" fill="#5FA840" />
+    <rect x="150" y="178" width="2" height="10" fill="#5FA840" />
+    <rect x="160" y="177" width="2" height="10" fill="#5FA840" />
+
+    <!-- Dog Guau (small, in scene) -->
+    <ellipse cx="200" cy="184" rx="15" ry="10" fill="#C4A882" />
+    <circle  cx="212" cy="176" r="10" fill="#C4A882" />
+    <ellipse cx="208" cy="172" rx="4" ry="6" fill="#A0784A" transform="rotate(-10 208 172)" />
+    <ellipse cx="216" cy="172" rx="4" ry="6" fill="#A0784A" transform="rotate(10 216 172)" />
+    <ellipse cx="212" cy="180" rx="5" ry="3" fill="#FDBCB4" />
+    <ellipse cx="212" cy="177" rx="3" ry="2" fill="#5D3A1A" />
+    <circle  cx="211" cy="176" r="0.8" fill="white" />
+    <path class="dog-tail" d="M186 182 Q178 172 182 164" stroke="#C4A882" stroke-width="5" fill="none" stroke-linecap="round" />
+    <!-- Dog collar -->
+    <rect x="206" y="183" width="12" height="4" rx="2" fill="#FF6B6B" />
+  </svg>
+</template>
+
+<!-- Scene: Journey -->
+<template id="scene-journey">
+  <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <defs>
+      <linearGradient id="journeySky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#FFF9C4" />
+        <stop offset="100%" stop-color="#87CEEB" />
+      </linearGradient>
+    </defs>
+    <rect width="300" height="220" fill="url(#journeySky)" />
+
+    <!-- Rolling hills -->
+    <ellipse cx="80"  cy="190" rx="120" ry="50" fill="#7EC850" />
+    <ellipse cx="240" cy="200" rx="100" ry="40" fill="#5FA840" />
+    <rect x="0" y="185" width="300" height="35" fill="#5FA840" />
+
+    <!-- Winding path (dashed) -->
+    <path d="M20 200 Q80 170 150 185 Q220 200 280 175"
+          stroke="#C4A882" stroke-width="6" fill="none"
+          stroke-dasharray="12,8" stroke-linecap="round" />
+
+    <!-- Treasure chest -->
+    <rect x="220" y="160" width="40" height="28" rx="4" fill="#8B4513" />
+    <rect x="220" y="160" width="40" height="14" rx="4" fill="#A0784A" />
+    <rect x="218" y="170" width="44" height="6" rx="2" fill="#C4A882" />
+    <!-- Chest clasp -->
+    <circle cx="240" cy="173" r="4" fill="#FFD93D" />
+    <!-- Gold glow -->
+    <ellipse cx="240" cy="158" rx="20" ry="8" fill="#FFD93D" opacity="0.3" />
+    <path d="M235 155 L237 148 L240 155 L243 148 L245 155" stroke="#FFD93D" stroke-width="2" fill="none" />
+
+    <!-- Signpost -->
+    <rect x="148" y="148" width="5" height="38" fill="#8B4513" />
+    <rect x="138" y="148" width="40" height="16" rx="4" fill="#C4A882" />
+    <text x="145" y="160" font-size="9" fill="#3D2B1F" font-family="sans-serif" font-weight="bold">¡Tesoro!</text>
+
+    <!-- Hero + dog walking -->
+    <!-- Dog body -->
+    <ellipse cx="85" cy="188" rx="18" ry="11" fill="#C4A882" />
+    <circle  cx="100" cy="180" r="12" fill="#C4A882" />
+    <ellipse cx="96"  cy="175" rx="5"  ry="8" fill="#A0784A" transform="rotate(-15 96 175)" />
+    <ellipse cx="106" cy="175" rx="5"  ry="8" fill="#A0784A" transform="rotate(15 106 175)" />
+    <ellipse cx="100" cy="185" rx="6"  ry="4" fill="#FDBCB4" />
+    <ellipse cx="100" cy="181" rx="4"  ry="3" fill="#5D3A1A" />
+    <circle  cx="99"  cy="180" r="1.2" fill="white" />
+    <path class="dog-tail" d="M68 185 Q58 172 64 160" stroke="#C4A882" stroke-width="6" fill="none" stroke-linecap="round" />
+    <rect x="93" y="189" width="14" height="5" rx="2" fill="#FF6B6B" />
+
+    <!-- Map in paw -->
+    <rect x="115" y="175" width="22" height="16" rx="3" fill="#FFF8E1" stroke="#C4A882" stroke-width="1.5" />
+    <line x1="118" y1="180" x2="134" y2="180" stroke="#C4A882" stroke-width="1" />
+    <line x1="118" y1="184" x2="130" y2="184" stroke="#C4A882" stroke-width="1" />
+    <circle cx="127" cy="182" r="2" fill="#FF6B6B" />
+
+    <!-- Stars for extra charm -->
+    <circle class="star-twinkle" cx="30"  cy="30" r="2" fill="#FFD93D" />
+    <circle class="star-twinkle" cx="270" cy="25" r="2" fill="#FFD93D" />
+    <circle class="star-twinkle" cx="150" cy="20" r="2" fill="#FFD93D" />
+  </svg>
+</template>
+
+<!-- Scene: Arrival / Discovery -->
+<template id="scene-arrival">
+  <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <defs>
+      <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+        <stop offset="0%"   stop-color="#FFD93D" stop-opacity="0.8" />
+        <stop offset="100%" stop-color="#FFD93D" stop-opacity="0" />
+      </radialGradient>
+      <linearGradient id="arrivalSky" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#1a1a2e" />
+        <stop offset="60%"  stop-color="#16213e" />
+        <stop offset="100%" stop-color="#2E7D32" />
+      </linearGradient>
+    </defs>
+    <rect width="300" height="220" fill="url(#arrivalSky)" />
+
+    <!-- Stars -->
+    <circle class="star-twinkle" cx="20"  cy="15" r="2"   fill="white" />
+    <circle class="star-twinkle" cx="50"  cy="30" r="1.5" fill="white" />
+    <circle class="star-twinkle" cx="100" cy="10" r="2"   fill="white" />
+    <circle class="star-twinkle" cx="160" cy="25" r="1.5" fill="white" />
+    <circle class="star-twinkle" cx="220" cy="12" r="2"   fill="white" />
+    <circle class="star-twinkle" cx="270" cy="30" r="1.5" fill="white" />
+    <circle class="star-twinkle" cx="290" cy="15" r="2"   fill="white" />
+
+    <!-- Moon -->
+    <circle cx="260" cy="35" r="22" fill="#FFF9C4" />
+    <circle cx="270" cy="28" r="16" fill="#2E4A8E" />
+
+    <!-- Ground -->
+    <rect x="0" y="175" width="300" height="45" fill="#2E7D32" />
+
+    <!-- Treasure chest with glow -->
+    <ellipse cx="150" cy="172" rx="50" ry="20" fill="url(#glowGrad)" />
+    <rect x="115" y="148" width="70" height="50" rx="6" fill="#8B4513" />
+    <rect x="115" y="148" width="70" height="24" rx="6" fill="#A0784A" />
+    <rect x="112" y="165" width="76" height="10" rx="4" fill="#C4A882" />
+    <circle cx="150" cy="170" r="7" fill="#FFD93D" />
+    <!-- Gems spilling out -->
+    <circle cx="130" cy="145" r="5" fill="#FF6B6B" />
+    <circle cx="160" cy="143" r="6" fill="#4D96FF" />
+    <circle cx="175" cy="148" r="4" fill="#6BCB77" />
+    <circle cx="120" cy="150" r="4" fill="#CC5DE8" />
+    <!-- Gold coins -->
+    <ellipse cx="145" cy="148" rx="8" ry="4" fill="#FFD93D" />
+    <ellipse cx="155" cy="145" rx="6" ry="3" fill="#FFD93D" />
+    <ellipse cx="165" cy="149" rx="7" ry="3" fill="#FFD93D" />
+    <!-- Sparkle lines -->
+    <line x1="150" y1="128" x2="150" y2="140" stroke="#FFD93D" stroke-width="2" />
+    <line x1="140" y1="132" x2="148" y2="140" stroke="#FFD93D" stroke-width="2" />
+    <line x1="160" y1="132" x2="152" y2="140" stroke="#FFD93D" stroke-width="2" />
+
+    <!-- Dog celebrating -->
+    <ellipse cx="60"  cy="188" rx="18" ry="10" fill="#C4A882" />
+    <circle  cx="75"  cy="178" r="13" fill="#C4A882" />
+    <ellipse cx="71"  cy="172" rx="5" ry="8" fill="#A0784A" transform="rotate(-20 71 172)" />
+    <ellipse cx="81"  cy="172" rx="5" ry="8" fill="#A0784A" transform="rotate(20 81 172)" />
+    <ellipse cx="75"  cy="184" rx="6" ry="4" fill="#FDBCB4" />
+    <ellipse cx="75"  cy="180" rx="4" ry="3" fill="#5D3A1A" />
+    <circle  cx="74"  cy="179" r="1.2" fill="white" />
+    <!-- Open mouth / excited -->
+    <path d="M70 186 Q75 192 80 186" stroke="#5D3A1A" stroke-width="2" fill="#FF6B6B" />
+    <path class="dog-tail" d="M43 183 Q30 165 38 150" stroke="#C4A882" stroke-width="7" fill="none" stroke-linecap="round" />
+    <rect x="67" y="189" width="16" height="5" rx="2" fill="#FF6B6B" />
+  </svg>
+</template>
+
+<!-- Scene: Birthday finale -->
+<template id="scene-birthday">
+  <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <defs>
+      <linearGradient id="bdaySky" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0%"   stop-color="#1a1a2e" />
+        <stop offset="100%" stop-color="#0f3460" />
+      </linearGradient>
+    </defs>
+    <rect width="300" height="220" fill="url(#bdaySky)" />
+
+    <!-- Many stars -->
+    <circle class="star-twinkle" cx="15"  cy="15"  r="2"   fill="#FFD93D" />
+    <circle class="star-twinkle" cx="40"  cy="8"   r="1.5" fill="white" />
+    <circle class="star-twinkle" cx="70"  cy="20"  r="2"   fill="#FFD93D" />
+    <circle class="star-twinkle" cx="100" cy="12"  r="1.5" fill="white" />
+    <circle class="star-twinkle" cx="130" cy="5"   r="2"   fill="#FFD93D" />
+    <circle class="star-twinkle" cx="165" cy="18"  r="1.5" fill="white" />
+    <circle class="star-twinkle" cx="200" cy="8"   r="2"   fill="#FFD93D" />
+    <circle class="star-twinkle" cx="235" cy="20"  r="1.5" fill="white" />
+    <circle class="star-twinkle" cx="265" cy="10"  r="2"   fill="#FFD93D" />
+    <circle class="star-twinkle" cx="285" cy="25"  r="1.5" fill="white" />
+
+    <!-- Big cake -->
+    <!-- Bottom tier -->
+    <rect x="60" y="152" width="180" height="40" rx="10" fill="#CC5DE8" />
+    <rect x="60" y="152" width="180" height="14" rx="10" fill="#DA77F2" />
+    <!-- Middle tier -->
+    <rect x="80" y="118" width="140" height="38" rx="9" fill="#FF922B" />
+    <rect x="80" y="118" width="140" height="12" rx="9" fill="#FFB347" />
+    <!-- Top tier -->
+    <rect x="100" y="90" width="100" height="32" rx="8" fill="#FF6B6B" />
+    <rect x="100" y="90"  width="100" height="11" rx="8" fill="#FF8E8E" />
+
+    <!-- Candles -->
+    <rect x="115" y="70" width="8" height="22" rx="3" fill="#FF6B6B" />
+    <rect x="132" y="65" width="8" height="27" rx="3" fill="#4D96FF" />
+    <rect x="149" y="62" width="8" height="30" rx="3" fill="#6BCB77" />
+    <rect x="166" y="65" width="8" height="27" rx="3" fill="#FFD93D" />
+    <rect x="183" y="70" width="8" height="22" rx="3" fill="#CC5DE8" />
+
+    <!-- Flames -->
+    <ellipse class="flame" cx="119" cy="68" rx="5" ry="9" fill="#FFD93D" />
+    <ellipse class="flame" cx="136" cy="63" rx="5" ry="9" fill="#FFD93D" />
+    <ellipse class="flame" cx="153" cy="60" rx="5" ry="9" fill="#FFD93D" />
+    <ellipse class="flame" cx="170" cy="63" rx="5" ry="9" fill="#FFD93D" />
+    <ellipse class="flame" cx="187" cy="68" rx="5" ry="9" fill="#FFD93D" />
+
+    <!-- Decorations -->
+    <circle cx="100" cy="133" r="6" fill="white" />
+    <circle cx="118" cy="133" r="6" fill="#FFD93D" />
+    <circle cx="136" cy="133" r="6" fill="white" />
+    <circle cx="154" cy="133" r="6" fill="#FFD93D" />
+    <circle cx="172" cy="133" r="6" fill="white" />
+    <circle cx="190" cy="133" r="6" fill="#FFD93D" />
+    <circle cx="208" cy="133" r="6" fill="white" />
+
+    <circle cx="80"  cy="170" r="5" fill="#FFD93D" />
+    <circle cx="100" cy="170" r="5" fill="white" />
+    <circle cx="120" cy="170" r="5" fill="#FFD93D" />
+    <circle cx="140" cy="170" r="5" fill="white" />
+    <circle cx="160" cy="170" r="5" fill="#FFD93D" />
+    <circle cx="180" cy="170" r="5" fill="white" />
+    <circle cx="200" cy="170" r="5" fill="#FFD93D" />
+    <circle cx="220" cy="170" r="5" fill="white" />
+
+    <!-- Dog Guau celebrating at side -->
+    <ellipse cx="25"  cy="195" rx="16" ry="9"  fill="#C4A882" />
+    <circle  cx="38"  cy="186" r="12"          fill="#C4A882" />
+    <ellipse cx="34"  cy="180" rx="4.5" ry="7" fill="#A0784A" transform="rotate(-20 34 180)" />
+    <ellipse cx="43"  cy="180" rx="4.5" ry="7" fill="#A0784A" transform="rotate(20 43 180)" />
+    <ellipse cx="38"  cy="191" rx="5.5" ry="4" fill="#FDBCB4" />
+    <ellipse cx="38"  cy="187" rx="3.5" ry="3" fill="#5D3A1A" />
+    <circle  cx="37"  cy="186" r="1.2"         fill="white" />
+    <path d="M33 194 Q38 200 43 194" stroke="#5D3A1A" stroke-width="2" fill="#FF6B6B" />
+    <path class="dog-tail" d="M10 193 Q0 178 6 165" stroke="#C4A882" stroke-width="6" fill="none" stroke-linecap="round" />
+
+    <!-- Confetti elements in SVG -->
+    <rect x="255" y="40"  width="8" height="8" rx="1" fill="#FF6B6B" transform="rotate(20 259 44)" />
+    <rect x="275" y="60"  width="7" height="7" rx="1" fill="#FFD93D" transform="rotate(-15 279 64)" />
+    <rect x="240" y="80"  width="6" height="6" rx="1" fill="#4D96FF" transform="rotate(35 243 83)" />
+    <rect x="260" y="100" width="8" height="8" rx="1" fill="#6BCB77" transform="rotate(-25 264 104)" />
+
+    <!-- "32" text -->
+    <text x="150" y="215" text-anchor="middle" font-size="18" font-weight="900"
+          fill="#FFD93D" font-family="Nunito, sans-serif" opacity="0.9">¡32! 🎉</text>
+  </svg>
+</template>
+
+<!-- Scene: Egyptian Pyramids (full storybook size) -->
+<template id="scene-pyramids">
+  <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <defs>
+      <linearGradient id="desertSkyFull" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#1a1a2e" />
+        <stop offset="40%"  stop-color="#8B4513" />
+        <stop offset="100%" stop-color="#FF7F50" />
+      </linearGradient>
+    </defs>
+    <rect width="300" height="220" fill="url(#desertSkyFull)" />
+
+    <!-- Stars -->
+    <circle class="star-twinkle" cx="20"  cy="15" r="2"   fill="white" />
+    <circle class="star-twinkle" cx="50"  cy="8"  r="1.5" fill="#FFD93D" />
+    <circle class="star-twinkle" cx="90"  cy="20" r="2"   fill="white" />
+    <circle class="star-twinkle" cx="140" cy="10" r="1.5" fill="#FFD93D" />
+    <circle class="star-twinkle" cx="180" cy="22" r="2"   fill="white" />
+    <circle class="star-twinkle" cx="230" cy="12" r="1.5" fill="#FFD93D" />
+    <circle class="star-twinkle" cx="270" cy="25" r="2"   fill="white" />
+
+    <!-- Moon -->
+    <circle cx="260" cy="40" r="20" fill="#FFF9C4" />
+    <circle cx="268" cy="34" r="14" fill="#16213e" />
+
+    <!-- Sand dunes -->
+    <rect x="0" y="155" width="300" height="65" fill="#C4A882" />
+    <ellipse cx="80"  cy="158" rx="90"  ry="20" fill="#D4B896" />
+    <ellipse cx="240" cy="162" rx="80"  ry="18" fill="#D4B896" />
+
+    <!-- Large pyramid (left) -->
+    <polygon points="10,155 80,45 150,155"  fill="#B8975A" />
+    <polygon points="10,155 80,45 150,155"  fill="none" stroke="#A07840" stroke-width="1.5" />
+    <!-- Shadow face -->
+    <polygon points="80,45 150,155 115,155" fill="#9A7A44" opacity="0.5" />
+    <!-- Entrance -->
+    <polygon points="72,148 88,148 80,135"  fill="#424242" />
+
+    <!-- Smaller pyramid (right) -->
+    <polygon points="165,155 225,80 285,155" fill="#C9A96E" />
+    <polygon points="165,155 225,80 285,155" fill="none" stroke="#A07840" stroke-width="1.5" />
+    <polygon points="225,80 285,155 255,155" fill="#A07840" opacity="0.4" />
+
+    <!-- Sphinx silhouette (simplified) -->
+    <ellipse cx="180" cy="155" rx="30" ry="12" fill="#B8975A" />
+    <circle  cx="196" cy="143" r="12"           fill="#C4A882" />
+    <rect    cx="170" cy="145" width="28" height="12" rx="4" fill="#B8975A" />
+    <!-- Sphinx headdress -->
+    <rect x="186" y="132" width="20" height="12" rx="2" fill="#C4A882" />
+    <polygon points="186,132 206,132 200,126 192,126" fill="#FFD93D" />
+
+    <!-- Camel -->
+    <ellipse cx="45" cy="162" rx="18" ry="9"  fill="#D4956A" />
+    <ellipse cx="54" cy="153" rx="9"  ry="7"  fill="#D4956A" />
+    <circle  cx="62" cy="148" r="6"            fill="#D4956A" />
+    <ellipse cx="42" cy="155" rx="6"  ry="4"  fill="#C4824A" />
+    <rect x="34" y="168" width="4" height="10" rx="2" fill="#D4956A" />
+    <rect x="40" y="168" width="4" height="10" rx="2" fill="#D4956A" />
+    <rect x="48" y="168" width="4" height="10" rx="2" fill="#D4956A" />
+
+    <!-- Dog Guau with explorer hat -->
+    <ellipse cx="118" cy="168" rx="16" ry="9" fill="#C4A882" />
+    <circle  cx="130" cy="159" r="12"         fill="#C4A882" />
+    <ellipse cx="126" cy="153" rx="4" ry="6"  fill="#A0784A" transform="rotate(-15 126 153)" />
+    <ellipse cx="135" cy="153" rx="4" ry="6"  fill="#A0784A" transform="rotate(15 135 153)" />
+    <ellipse cx="130" cy="165" rx="5" ry="3"  fill="#FDBCB4" />
+    <ellipse cx="130" cy="161" rx="3" ry="2"  fill="#5D3A1A" />
+    <!-- Explorer hat on dog -->
+    <ellipse cx="130" cy="149" rx="10" ry="4" fill="#C4A882" />
+    <rect x="123" y="149" width="14" height="6" rx="2" fill="#A0784A" />
+    <path class="dog-tail" d="M103 164 Q93 152 98 140" stroke="#C4A882" stroke-width="5" fill="none" stroke-linecap="round" />
+    <rect x="123" y="169" width="14" height="4" rx="2" fill="#FF6B6B" />
+  </svg>
+</template>
+
+<!-- Scene: Vaduz Castle (full storybook size) -->
+<template id="scene-castle">
+  <svg viewBox="0 0 300 220" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+    <defs>
+      <linearGradient id="castleSkyFull" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%"   stop-color="#2E4A8E" />
+        <stop offset="100%" stop-color="#87CEEB" />
+      </linearGradient>
+    </defs>
+    <rect width="300" height="220" fill="url(#castleSkyFull)" />
+
+    <!-- Stars -->
+    <circle class="star-twinkle" cx="20"  cy="12" r="1.5" fill="white" />
+    <circle class="star-twinkle" cx="45"  cy="25" r="2"   fill="#FFD93D" />
+    <circle class="star-twinkle" cx="80"  cy="10" r="1.5" fill="white" />
+
+    <!-- Moon / sun (dusk) -->
+    <circle cx="250" cy="35" r="22" fill="#FFD93D" opacity="0.8" />
+    <circle cx="248" cy="35" r="18" fill="#FFE55C" opacity="0.9" />
+
+    <!-- Background mountains -->
+    <polygon points="0,180   70,100 140,180"  fill="#5A7A60" opacity="0.6" />
+    <polygon points="80,180  170,80  260,180" fill="#4A6A50" opacity="0.5" />
+    <polygon points="160,180 240,110 300,180" fill="#6B8F71" opacity="0.6" />
+
+    <!-- Snow caps on mountains -->
+    <polygon points="70,100 60,120 80,120"   fill="white" opacity="0.8" />
+    <polygon points="170,80  157,108 183,108" fill="white" opacity="0.8" />
+
+    <!-- Ground / hillside -->
+    <rect x="0" y="175" width="300" height="45" fill="#7EC850" />
+    <rect x="0" y="175" width="300" height="8"  fill="#5FA840" opacity="0.5" />
+
+    <!-- Castle wall -->
+    <rect x="80" y="120" width="140" height="70" fill="#A8A8A8" />
+
+    <!-- Left main tower -->
+    <rect x="60"  y="80" width="55" height="110" rx="4" fill="#9E9E9E" />
+    <!-- Crenellations left tower -->
+    <rect x="60"  y="73" width="11" height="12" fill="#9E9E9E" />
+    <rect x="75"  y="73" width="11" height="12" fill="#9E9E9E" />
+    <rect x="90"  y="73" width="11" height="12" fill="#9E9E9E" />
+    <rect x="105" y="73" width="10" height="12" fill="#9E9E9E" />
+
+    <!-- Right main tower -->
+    <rect x="185" y="80" width="55" height="110" rx="4" fill="#9E9E9E" />
+    <!-- Crenellations right tower -->
+    <rect x="185" y="73" width="11" height="12" fill="#9E9E9E" />
+    <rect x="200" y="73" width="11" height="12" fill="#9E9E9E" />
+    <rect x="215" y="73" width="11" height="12" fill="#9E9E9E" />
+    <rect x="230" y="73" width="10" height="12" fill="#9E9E9E" />
+
+    <!-- Center crenellations on wall -->
+    <rect x="98"  y="113" width="12" height="10" fill="#BDBDBD" />
+    <rect x="116" y="113" width="12" height="10" fill="#BDBDBD" />
+    <rect x="134" y="113" width="12" height="10" fill="#BDBDBD" />
+    <rect x="152" y="113" width="12" height="10" fill="#BDBDBD" />
+    <rect x="170" y="113" width="12" height="10" fill="#BDBDBD" />
+
+    <!-- Gate arch -->
+    <rect x="130" y="148" width="40" height="42" rx="20" fill="#424242" />
+    <rect x="133" y="165" width="34" height="28" fill="#424242" />
+
+    <!-- Portcullis lines -->
+    <line x1="138" y1="148" x2="138" y2="190" stroke="#303030" stroke-width="2" />
+    <line x1="148" y1="148" x2="148" y2="190" stroke="#303030" stroke-width="2" />
+    <line x1="158" y1="148" x2="158" y2="190" stroke="#303030" stroke-width="2" />
+    <line x1="168" y1="148" x2="168" y2="190" stroke="#303030" stroke-width="2" />
+    <line x1="133" y1="162" x2="167" y2="162" stroke="#303030" stroke-width="2" />
+    <line x1="133" y1="174" x2="167" y2="174" stroke="#303030" stroke-width="2" />
+
+    <!-- Tower windows -->
+    <rect x="73"  y="100" width="16" height="20" rx="8" fill="#87CEEB" />
+    <rect x="73"  y="128" width="16" height="16" rx="4" fill="#87CEEB" />
+    <rect x="73"  y="152" width="16" height="16" rx="4" fill="#87CEEB" />
+
+    <rect x="211" y="100" width="16" height="20" rx="8" fill="#87CEEB" />
+    <rect x="211" y="128" width="16" height="16" rx="4" fill="#87CEEB" />
+    <rect x="211" y="152" width="16" height="16" rx="4" fill="#87CEEB" />
+
+    <!-- Liechtenstein flag on left tower -->
+    <rect x="32" y="50" width="3"  height="42" fill="#8B4513" />
+    <rect x="35" y="50" width="26" height="12" rx="1" fill="#002B7F" />
+    <rect x="35" y="62" width="26" height="12" rx="1" fill="#CE1126" />
+    <!-- Crown -->
+    <polygon points="37,52 40,47 43,52 46,47 49,52 52,47 55,52" fill="#FFD93D" />
+    <!-- Flag wave animation -->
+    <animateTransform attributeName="transform" type="skewX"
+      values="0;3;0;-2;0" dur="3s" repeatCount="indefinite"
+      additive="sum" />
+
+    <!-- Dog Guau at castle entrance -->
+    <ellipse cx="240" cy="187" rx="16" ry="9"  fill="#C4A882" />
+    <circle  cx="252" cy="178" r="12"           fill="#C4A882" />
+    <ellipse cx="248" cy="172" rx="4" ry="6"   fill="#A0784A" transform="rotate(-15 248 172)" />
+    <ellipse cx="257" cy="172" rx="4" ry="6"   fill="#A0784A" transform="rotate(15 257 172)" />
+    <ellipse cx="252" cy="183" rx="5" ry="3"   fill="#FDBCB4" />
+    <ellipse cx="252" cy="179" rx="3" ry="2"   fill="#5D3A1A" />
+    <circle  cx="251" cy="178" r="1.2"          fill="white" />
+    <path class="dog-tail" d="M225 183 Q215 171 221 159" stroke="#C4A882" stroke-width="5" fill="none" stroke-linecap="round" />
+    <rect x="245" y="188" width="14" height="4" rx="2" fill="#FF6B6B" />
+
+    <!-- Cloud -->
+    <ellipse class="cloud" cx="40"  cy="55" rx="28" ry="12" fill="white" opacity="0.8" />
+    <ellipse class="cloud" cx="54"  cy="48" rx="18" ry="10" fill="white" opacity="0.8" />
+  </svg>
+</template>
+
+<script src="./app.js"></script>
+</body>
+</html>
