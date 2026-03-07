@@ -388,7 +388,11 @@ p {
   background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
   color: white;
   position: relative;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
+  justify-content: flex-start;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .surprise-content {
@@ -416,8 +420,9 @@ p {
   background: rgba(255,255,255,0.1);
   border: 2px solid rgba(255,255,255,0.2);
   border-radius: var(--radius);
-  padding: 1.8rem;
-  font-size: 1.1rem;
+  padding: 1.8rem 2rem;
+  font-size: 1.05rem;
+  text-align: center;
   line-height: 1.8;
   color: #fff;
   margin-bottom: 2rem;
