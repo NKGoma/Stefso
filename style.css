@@ -359,11 +359,20 @@ p {
 }
 
 .book-story-text {
-  font-size: 1.15rem;
-  line-height: 1.8;
+  font-size: 1.1rem;
+  line-height: 1.9;
   flex: 1;
-  display: flex;
-  align-items: center;
+  display: block;
+  align-self: center;
+  padding: 0.25rem 0;
+}
+
+.book-story-text p {
+  margin-bottom: 0.9rem;
+}
+
+.book-story-text p:last-child {
+  margin-bottom: 0;
 }
 
 .book-nav {

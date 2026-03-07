@@ -33,6 +33,8 @@ const VOCAB = {
   aventura:  { es: 'la aventura',         en: 'the adventure' },
   misterioso:{ es: 'misterioso',          en: 'mysterious' },
   dorada:    { es: 'dorada',              en: 'golden' },
+  amigo:     { es: 'el amigo',            en: 'the friend' },
+  estrellas: { es: 'las estrellas',       en: 'the stars' },
 };
 
 // --- Choice Questions (Screen 4) ------------------------------------
@@ -68,51 +70,39 @@ const CHOICE_QUESTIONS = [
 
 // --- Story Template --------------------------------------------------
 const STORY_PAGES = [
+  // Page 1 — Departure
   {
-    scene:     'setting',
-    vocabKey:  'aventura',
-    buildText: (s) =>
-      `${capitalise(s.timeOfDay)}, <span class="vocab-word">${s.hero}</span>
-       y su <span class="vocab-word">compañero <span class="vocab-hint">(companion)</span></span>
-       <span class="vocab-word">${sidekickName(s.sidekick)}</span>
-       salieron de <span class="vocab-word">${settingLabel(s.setting)}</span>
-       con <span class="vocab-word">${s.item}</span>
-       <span class="vocab-hint">${itemHint(s.item)}</span> en la mano.`,
+    scene:    'setting',
+    vocabKey: 'aventura',
+    buildText: (s) => `<p>${capitalise(s.timeOfDay)}, <span class="vocab-word">${s.hero}</span> decidió partir a una gran <span class="vocab-word">aventura <span class="vocab-hint">(adventure)</span></span>. Con su fiel <span class="vocab-word">compañero <span class="vocab-hint">(companion)</span></span> <span class="vocab-word">${sidekickName(s.sidekick)}</span> a su lado, salieron de <span class="vocab-word">${settingLabel(s.setting)}</span>.</p><p>En la mano llevaban <span class="vocab-word">${s.item} <span class="vocab-hint">${itemHint(s.item)}</span></span>. El <span class="vocab-word">corazón <span class="vocab-hint">(heart)</span></span> de ${s.hero} latía de <span class="vocab-word">emoción <span class="vocab-hint">(excitement)</span></span>. ¡La <span class="vocab-word">aventura</span> había comenzado!</p>`,
   },
+
+  // Page 2 — The Journey
   {
-    scene:     'journey',
-    vocabKey:  'misterioso',
-    buildText: (s) =>
-      `«<span class="vocab-word">${sidekickSound(s.sidekick)}</span>
-       <span class="vocab-hint">${sidekickSoundHint(s.sidekick)}</span>»
-       — dijo <span class="vocab-word">${sidekickName(s.sidekick)}</span>.
-       <br><br>
-       «¡<span class="vocab-word">Vamos a encontrar</span>
-       <span class="vocab-hint">(let's find)</span>
-       algo <span class="vocab-word">especial <span class="vocab-hint">(special)</span></span>!»`,
+    scene:    'journey',
+    vocabKey: 'misterioso',
+    buildText: (s) => `<p>El <span class="vocab-word">camino <span class="vocab-hint">(path)</span></span> era <span class="vocab-word">largo <span class="vocab-hint">(long)</span></span> y lleno de <span class="vocab-word">maravillas <span class="vocab-hint">(wonders)</span></span>. Pasaron junto a ríos <span class="vocab-word">brillantes <span class="vocab-hint">(shining)</span></span>, <span class="vocab-word">bosques misteriosos <span class="vocab-hint">(mysterious forests)</span></span> y colinas de color <span class="vocab-word">esmeralda <span class="vocab-hint">(emerald)</span></span>.</p><p>De repente, <span class="vocab-word">${sidekickName(s.sidekick)}</span> se detuvo. «<span class="vocab-word">${sidekickSound(s.sidekick)}</span> <span class="vocab-hint">${sidekickSoundHint(s.sidekick)}</span>» — <span class="vocab-word">exclamó <span class="vocab-hint">(exclaimed)</span></span>. «¡Mira, <span class="vocab-word">allí <span class="vocab-hint">(over there)</span></span>! ¡El lugar que buscamos!»</p>`,
   },
+
+  // Page 3 — Discovery
   {
-    scene:     'arrival',
-    vocabKey:  endingVocabKey,
-    buildText: (s) =>
-      `Al <span class="vocab-word">llegar <span class="vocab-hint">(arriving)</span></span>,
-       encontraron <span class="vocab-word">${s.ending}</span>
-       <span class="vocab-hint">${endingHint(s.ending)}</span>.
-       <br><br>
-       El <span class="vocab-word">corazón <span class="vocab-hint">(heart)</span></span>
-       de <span class="vocab-word">${s.hero}</span>
-       se llenó de <span class="vocab-word">alegría <span class="vocab-hint">(joy)</span></span>.`,
+    scene:    'arrival',
+    vocabKey: endingVocabKey,
+    buildText: (s) => `<p>Al final del <span class="vocab-word">camino</span>, ante sus ojos <span class="vocab-word">asombrados <span class="vocab-hint">(astonished)</span></span>, apareció <span class="vocab-word">${s.ending} <span class="vocab-hint">${endingHint(s.ending)}</span></span>. Era más <span class="vocab-word">hermoso <span class="vocab-hint">(beautiful)</span></span> de lo que habían imaginado.</p><p>«¡Lo <span class="vocab-word">logramos <span class="vocab-hint">(we did it)</span></span>!» — gritó <span class="vocab-word">${s.hero}</span> saltando de <span class="vocab-word">alegría <span class="vocab-hint">(joy)</span></span>. «<span class="vocab-word">${sidekickSound(s.sidekick)}</span>» — respondió <span class="vocab-word">${sidekickName(s.sidekick)}</span> meneando la cola.</p>`,
   },
+
+  // Page 4 — Reflection under the stars
   {
-    scene:     'birthday',
-    vocabKey:  'cuento',
-    buildText: (_s) =>
-      `Y <span class="vocab-word">colorín colorado</span>
-       <span class="vocab-hint">(and that's the end — a classic Spanish story closer)</span>,
-       este <span class="vocab-word">cuento <span class="vocab-hint">(story)</span></span>
-       ha terminado.
-       <br><br>
-       <strong>¡Feliz cumpleaños, Steffi!</strong> 🎂`,
+    scene:    'arrival',
+    vocabKey: 'amigo',
+    buildText: (s) => `<p>Esa <span class="vocab-word">noche <span class="vocab-hint">(night)</span></span>, bajo las <span class="vocab-word">estrellas <span class="vocab-hint">(stars)</span></span>, <span class="vocab-word">${s.hero}</span> y <span class="vocab-word">${sidekickName(s.sidekick)}</span> se sentaron juntos en <span class="vocab-word">silencio <span class="vocab-hint">(silence)</span></span>. Habían <span class="vocab-word">viajado <span class="vocab-hint">(traveled)</span></span> muy lejos.</p><p>Pero ${s.hero} <span class="vocab-word">comprendió <span class="vocab-hint">(understood)</span></span> algo <span class="vocab-word">importante <span class="vocab-hint">(important)</span></span>: el mejor <span class="vocab-word">tesoro <span class="vocab-hint">(treasure)</span></span> del mundo no es el oro — es tener un buen <span class="vocab-word">amigo <span class="vocab-hint">(friend)</span></span> a tu lado.</p>`,
+  },
+
+  // Page 5 — The End + Birthday
+  {
+    scene:    'birthday',
+    vocabKey: 'cuento',
+    buildText: (_s) => `<p>Y <span class="vocab-word">colorín colorado <span class="vocab-hint">(the classic Spanish story-ender!)</span></span>, este <span class="vocab-word">cuento <span class="vocab-hint">(story)</span></span> ha terminado.</p><p><strong>¡Feliz cumpleaños, Steffi!</strong> 🎂<br><span style="font-size:0.9em;color:var(--color-hint)">¡Que tengas la aventura más <span class="vocab-word">bonita <span class="vocab-hint">(beautiful)</span></span> de todas!</span></p>`,
   },
 ];
 
