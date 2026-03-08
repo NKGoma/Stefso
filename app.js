@@ -148,6 +148,12 @@ function endingVocabKey(s) {
   return s.ending && s.ending.includes('tesoro') ? 'tesoro' : 'amistad';
 }
 
+function applyCharacter(container, sidekick) {
+  const isDog = (sidekick !== 'Ramón');
+  container.querySelectorAll('.sk-dog').forEach(el => el.style.display = isDog ? '' : 'none');
+  container.querySelectorAll('.sk-ramon').forEach(el => el.style.display = isDog ? 'none' : '');
+}
+
 // --- Screen Management -----------------------------------------------
 function showScreen(id) {
   document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
@@ -282,6 +288,7 @@ function renderPage(n) {
   sceneContainer.innerHTML = '';
   if (tpl) {
     sceneContainer.appendChild(tpl.content.cloneNode(true));
+    applyCharacter(sceneContainer, state.sidekick);
     // Starry night class toggle
     if (state.timeOfDay && state.timeOfDay.includes('noche')) {
       sceneContainer.querySelector('svg')?.classList.add('night');

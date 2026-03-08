@@ -529,16 +529,37 @@
     <rect x="160" y="177" width="2" height="10" fill="#5FA840" />
 
     <!-- Dog Guau (small, in scene) -->
-    <ellipse cx="200" cy="184" rx="15" ry="10" fill="#C4A882" />
-    <circle  cx="212" cy="176" r="10" fill="#C4A882" />
-    <ellipse cx="208" cy="172" rx="4" ry="6" fill="#A0784A" transform="rotate(-10 208 172)" />
-    <ellipse cx="216" cy="172" rx="4" ry="6" fill="#A0784A" transform="rotate(10 216 172)" />
-    <ellipse cx="212" cy="180" rx="5" ry="3" fill="#FDBCB4" />
-    <ellipse cx="212" cy="177" rx="3" ry="2" fill="#5D3A1A" />
-    <circle  cx="211" cy="176" r="0.8" fill="white" />
-    <path class="dog-tail" d="M186 182 Q178 172 182 164" stroke="#C4A882" stroke-width="5" fill="none" stroke-linecap="round" />
-    <!-- Dog collar -->
-    <rect x="206" y="183" width="12" height="4" rx="2" fill="#FF6B6B" />
+    <g class="sk-dog">
+      <ellipse cx="200" cy="184" rx="15" ry="10" fill="#C4A882" />
+      <circle  cx="212" cy="176" r="10" fill="#C4A882" />
+      <ellipse cx="208" cy="172" rx="4" ry="6" fill="#A0784A" transform="rotate(-10 208 172)" />
+      <ellipse cx="216" cy="172" rx="4" ry="6" fill="#A0784A" transform="rotate(10 216 172)" />
+      <ellipse cx="212" cy="180" rx="5" ry="3" fill="#FDBCB4" />
+      <ellipse cx="212" cy="177" rx="3" ry="2" fill="#5D3A1A" />
+      <circle  cx="211" cy="176" r="0.8" fill="white" />
+      <path class="dog-tail" d="M186 182 Q178 172 182 164" stroke="#C4A882" stroke-width="5" fill="none" stroke-linecap="round" />
+      <rect x="206" y="183" width="12" height="4" rx="2" fill="#FF6B6B" />
+    </g>
+    <!-- Ramón el valiente (knight, shown when Ramón is chosen) -->
+    <g class="sk-ramon" style="display:none" transform="translate(189,155) scale(0.44)">
+      <ellipse cx="40" cy="10" rx="6" ry="10" fill="#FF6B6B" />
+      <rect x="22" y="14" width="36" height="20" rx="8" fill="#9E9E9E" />
+      <rect x="22" y="14" width="36" height="8"  rx="6" fill="#BDBDBD" />
+      <rect x="28" y="27" width="24" height="5"  rx="2" fill="#424242" />
+      <circle cx="40" cy="45" r="11" fill="#FDBCB4" />
+      <circle cx="35" cy="43" r="2"  fill="#2E4A1E" />
+      <circle cx="45" cy="43" r="2"  fill="#2E4A1E" />
+      <path d="M33 48 Q37 51 40 48 Q43 51 47 48" stroke="#5D3A1A" stroke-width="2.5" fill="none" stroke-linecap="round" />
+      <path d="M35 52 Q40 55 45 52" stroke="#5D3A1A" stroke-width="1.5" fill="none" stroke-linecap="round" />
+      <rect x="26" y="54" width="28" height="20" rx="5" fill="#9E9E9E" />
+      <rect x="26" y="63" width="28" height="5"  fill="#8B4513" />
+      <rect x="29" y="72" width="8"  height="14" rx="2" fill="#757575" />
+      <rect x="43" y="72" width="8"  height="14" rx="2" fill="#757575" />
+      <path d="M12 54 L22 54 L22 66 L17 74 L12 66 Z" fill="#4D96FF" />
+      <path d="M12 54 L22 54 L22 66 L17 74 L12 66 Z" fill="none" stroke="white" stroke-width="1.5" />
+      <rect x="55" y="54" width="4"  height="28" rx="1" fill="#BDBDBD" />
+      <rect x="50" y="62" width="14" height="4"  rx="2" fill="#C4A882" />
+    </g>
   </svg>
 </template>
 
@@ -578,17 +599,37 @@
     <rect x="138" y="148" width="40" height="16" rx="4" fill="#C4A882" />
     <text x="145" y="160" font-size="9" fill="#3D2B1F" font-family="sans-serif" font-weight="bold">¡Tesoro!</text>
 
-    <!-- Hero + dog walking -->
-    <!-- Dog body -->
-    <ellipse cx="85" cy="188" rx="18" ry="11" fill="#C4A882" />
-    <circle  cx="100" cy="180" r="12" fill="#C4A882" />
-    <ellipse cx="96"  cy="175" rx="5"  ry="8" fill="#A0784A" transform="rotate(-15 96 175)" />
-    <ellipse cx="106" cy="175" rx="5"  ry="8" fill="#A0784A" transform="rotate(15 106 175)" />
-    <ellipse cx="100" cy="185" rx="6"  ry="4" fill="#FDBCB4" />
-    <ellipse cx="100" cy="181" rx="4"  ry="3" fill="#5D3A1A" />
-    <circle  cx="99"  cy="180" r="1.2" fill="white" />
-    <path class="dog-tail" d="M68 185 Q58 172 64 160" stroke="#C4A882" stroke-width="6" fill="none" stroke-linecap="round" />
-    <rect x="93" y="189" width="14" height="5" rx="2" fill="#FF6B6B" />
+    <!-- Hero + sidekick walking -->
+    <g class="sk-dog">
+      <ellipse cx="85" cy="188" rx="18" ry="11" fill="#C4A882" />
+      <circle  cx="100" cy="180" r="12" fill="#C4A882" />
+      <ellipse cx="96"  cy="175" rx="5"  ry="8" fill="#A0784A" transform="rotate(-15 96 175)" />
+      <ellipse cx="106" cy="175" rx="5"  ry="8" fill="#A0784A" transform="rotate(15 106 175)" />
+      <ellipse cx="100" cy="185" rx="6"  ry="4" fill="#FDBCB4" />
+      <ellipse cx="100" cy="181" rx="4"  ry="3" fill="#5D3A1A" />
+      <circle  cx="99"  cy="180" r="1.2" fill="white" />
+      <path class="dog-tail" d="M68 185 Q58 172 64 160" stroke="#C4A882" stroke-width="6" fill="none" stroke-linecap="round" />
+      <rect x="93" y="189" width="14" height="5" rx="2" fill="#FF6B6B" />
+    </g>
+    <g class="sk-ramon" style="display:none" transform="translate(72,161) scale(0.44)">
+      <ellipse cx="40" cy="10" rx="6" ry="10" fill="#FF6B6B" />
+      <rect x="22" y="14" width="36" height="20" rx="8" fill="#9E9E9E" />
+      <rect x="22" y="14" width="36" height="8"  rx="6" fill="#BDBDBD" />
+      <rect x="28" y="27" width="24" height="5"  rx="2" fill="#424242" />
+      <circle cx="40" cy="45" r="11" fill="#FDBCB4" />
+      <circle cx="35" cy="43" r="2"  fill="#2E4A1E" />
+      <circle cx="45" cy="43" r="2"  fill="#2E4A1E" />
+      <path d="M33 48 Q37 51 40 48 Q43 51 47 48" stroke="#5D3A1A" stroke-width="2.5" fill="none" stroke-linecap="round" />
+      <path d="M35 52 Q40 55 45 52" stroke="#5D3A1A" stroke-width="1.5" fill="none" stroke-linecap="round" />
+      <rect x="26" y="54" width="28" height="20" rx="5" fill="#9E9E9E" />
+      <rect x="26" y="63" width="28" height="5"  fill="#8B4513" />
+      <rect x="29" y="72" width="8"  height="14" rx="2" fill="#757575" />
+      <rect x="43" y="72" width="8"  height="14" rx="2" fill="#757575" />
+      <path d="M12 54 L22 54 L22 66 L17 74 L12 66 Z" fill="#4D96FF" />
+      <path d="M12 54 L22 54 L22 66 L17 74 L12 66 Z" fill="none" stroke="white" stroke-width="1.5" />
+      <rect x="55" y="54" width="4"  height="28" rx="1" fill="#BDBDBD" />
+      <rect x="50" y="62" width="14" height="4"  rx="2" fill="#C4A882" />
+    </g>
 
     <!-- Map in paw -->
     <rect x="115" y="175" width="22" height="16" rx="3" fill="#FFF8E1" stroke="#C4A882" stroke-width="1.5" />
@@ -655,18 +696,38 @@
     <line x1="140" y1="132" x2="148" y2="140" stroke="#FFD93D" stroke-width="2" />
     <line x1="160" y1="132" x2="152" y2="140" stroke="#FFD93D" stroke-width="2" />
 
-    <!-- Dog celebrating -->
-    <ellipse cx="60"  cy="188" rx="18" ry="10" fill="#C4A882" />
-    <circle  cx="75"  cy="178" r="13" fill="#C4A882" />
-    <ellipse cx="71"  cy="172" rx="5" ry="8" fill="#A0784A" transform="rotate(-20 71 172)" />
-    <ellipse cx="81"  cy="172" rx="5" ry="8" fill="#A0784A" transform="rotate(20 81 172)" />
-    <ellipse cx="75"  cy="184" rx="6" ry="4" fill="#FDBCB4" />
-    <ellipse cx="75"  cy="180" rx="4" ry="3" fill="#5D3A1A" />
-    <circle  cx="74"  cy="179" r="1.2" fill="white" />
-    <!-- Open mouth / excited -->
-    <path d="M70 186 Q75 192 80 186" stroke="#5D3A1A" stroke-width="2" fill="#FF6B6B" />
-    <path class="dog-tail" d="M43 183 Q30 165 38 150" stroke="#C4A882" stroke-width="7" fill="none" stroke-linecap="round" />
-    <rect x="67" y="189" width="16" height="5" rx="2" fill="#FF6B6B" />
+    <!-- Sidekick celebrating -->
+    <g class="sk-dog">
+      <ellipse cx="60"  cy="188" rx="18" ry="10" fill="#C4A882" />
+      <circle  cx="75"  cy="178" r="13" fill="#C4A882" />
+      <ellipse cx="71"  cy="172" rx="5" ry="8" fill="#A0784A" transform="rotate(-20 71 172)" />
+      <ellipse cx="81"  cy="172" rx="5" ry="8" fill="#A0784A" transform="rotate(20 81 172)" />
+      <ellipse cx="75"  cy="184" rx="6" ry="4" fill="#FDBCB4" />
+      <ellipse cx="75"  cy="180" rx="4" ry="3" fill="#5D3A1A" />
+      <circle  cx="74"  cy="179" r="1.2" fill="white" />
+      <path d="M70 186 Q75 192 80 186" stroke="#5D3A1A" stroke-width="2" fill="#FF6B6B" />
+      <path class="dog-tail" d="M43 183 Q30 165 38 150" stroke="#C4A882" stroke-width="7" fill="none" stroke-linecap="round" />
+      <rect x="67" y="189" width="16" height="5" rx="2" fill="#FF6B6B" />
+    </g>
+    <g class="sk-ramon" style="display:none" transform="translate(50,160) scale(0.44)">
+      <ellipse cx="40" cy="10" rx="6" ry="10" fill="#FF6B6B" />
+      <rect x="22" y="14" width="36" height="20" rx="8" fill="#9E9E9E" />
+      <rect x="22" y="14" width="36" height="8"  rx="6" fill="#BDBDBD" />
+      <rect x="28" y="27" width="24" height="5"  rx="2" fill="#424242" />
+      <circle cx="40" cy="45" r="11" fill="#FDBCB4" />
+      <circle cx="35" cy="43" r="2"  fill="#2E4A1E" />
+      <circle cx="45" cy="43" r="2"  fill="#2E4A1E" />
+      <path d="M33 48 Q37 51 40 48 Q43 51 47 48" stroke="#5D3A1A" stroke-width="2.5" fill="none" stroke-linecap="round" />
+      <path d="M35 52 Q40 55 45 52" stroke="#5D3A1A" stroke-width="1.5" fill="none" stroke-linecap="round" />
+      <rect x="26" y="54" width="28" height="20" rx="5" fill="#9E9E9E" />
+      <rect x="26" y="63" width="28" height="5"  fill="#8B4513" />
+      <rect x="29" y="72" width="8"  height="14" rx="2" fill="#757575" />
+      <rect x="43" y="72" width="8"  height="14" rx="2" fill="#757575" />
+      <path d="M12 54 L22 54 L22 66 L17 74 L12 66 Z" fill="#4D96FF" />
+      <path d="M12 54 L22 54 L22 66 L17 74 L12 66 Z" fill="none" stroke="white" stroke-width="1.5" />
+      <rect x="55" y="54" width="4"  height="28" rx="1" fill="#BDBDBD" />
+      <rect x="50" y="62" width="14" height="4"  rx="2" fill="#C4A882" />
+    </g>
   </svg>
 </template>
 
@@ -736,16 +797,37 @@
     <circle cx="200" cy="170" r="5" fill="#FFD93D" />
     <circle cx="220" cy="170" r="5" fill="white" />
 
-    <!-- Dog Guau celebrating at side -->
-    <ellipse cx="25"  cy="195" rx="16" ry="9"  fill="#C4A882" />
-    <circle  cx="38"  cy="186" r="12"          fill="#C4A882" />
-    <ellipse cx="34"  cy="180" rx="4.5" ry="7" fill="#A0784A" transform="rotate(-20 34 180)" />
-    <ellipse cx="43"  cy="180" rx="4.5" ry="7" fill="#A0784A" transform="rotate(20 43 180)" />
-    <ellipse cx="38"  cy="191" rx="5.5" ry="4" fill="#FDBCB4" />
-    <ellipse cx="38"  cy="187" rx="3.5" ry="3" fill="#5D3A1A" />
-    <circle  cx="37"  cy="186" r="1.2"         fill="white" />
-    <path d="M33 194 Q38 200 43 194" stroke="#5D3A1A" stroke-width="2" fill="#FF6B6B" />
-    <path class="dog-tail" d="M10 193 Q0 178 6 165" stroke="#C4A882" stroke-width="6" fill="none" stroke-linecap="round" />
+    <!-- Sidekick celebrating at side -->
+    <g class="sk-dog">
+      <ellipse cx="25"  cy="195" rx="16" ry="9"  fill="#C4A882" />
+      <circle  cx="38"  cy="186" r="12"          fill="#C4A882" />
+      <ellipse cx="34"  cy="180" rx="4.5" ry="7" fill="#A0784A" transform="rotate(-20 34 180)" />
+      <ellipse cx="43"  cy="180" rx="4.5" ry="7" fill="#A0784A" transform="rotate(20 43 180)" />
+      <ellipse cx="38"  cy="191" rx="5.5" ry="4" fill="#FDBCB4" />
+      <ellipse cx="38"  cy="187" rx="3.5" ry="3" fill="#5D3A1A" />
+      <circle  cx="37"  cy="186" r="1.2"         fill="white" />
+      <path d="M33 194 Q38 200 43 194" stroke="#5D3A1A" stroke-width="2" fill="#FF6B6B" />
+      <path class="dog-tail" d="M10 193 Q0 178 6 165" stroke="#C4A882" stroke-width="6" fill="none" stroke-linecap="round" />
+    </g>
+    <g class="sk-ramon" style="display:none" transform="translate(10,166) scale(0.44)">
+      <ellipse cx="40" cy="10" rx="6" ry="10" fill="#FF6B6B" />
+      <rect x="22" y="14" width="36" height="20" rx="8" fill="#9E9E9E" />
+      <rect x="22" y="14" width="36" height="8"  rx="6" fill="#BDBDBD" />
+      <rect x="28" y="27" width="24" height="5"  rx="2" fill="#424242" />
+      <circle cx="40" cy="45" r="11" fill="#FDBCB4" />
+      <circle cx="35" cy="43" r="2"  fill="#2E4A1E" />
+      <circle cx="45" cy="43" r="2"  fill="#2E4A1E" />
+      <path d="M33 48 Q37 51 40 48 Q43 51 47 48" stroke="#5D3A1A" stroke-width="2.5" fill="none" stroke-linecap="round" />
+      <path d="M35 52 Q40 55 45 52" stroke="#5D3A1A" stroke-width="1.5" fill="none" stroke-linecap="round" />
+      <rect x="26" y="54" width="28" height="20" rx="5" fill="#9E9E9E" />
+      <rect x="26" y="63" width="28" height="5"  fill="#8B4513" />
+      <rect x="29" y="72" width="8"  height="14" rx="2" fill="#757575" />
+      <rect x="43" y="72" width="8"  height="14" rx="2" fill="#757575" />
+      <path d="M12 54 L22 54 L22 66 L17 74 L12 66 Z" fill="#4D96FF" />
+      <path d="M12 54 L22 54 L22 66 L17 74 L12 66 Z" fill="none" stroke="white" stroke-width="1.5" />
+      <rect x="55" y="54" width="4"  height="28" rx="1" fill="#BDBDBD" />
+      <rect x="50" y="62" width="14" height="4"  rx="2" fill="#C4A882" />
+    </g>
 
     <!-- Confetti elements in SVG -->
     <rect x="255" y="40"  width="8" height="8" rx="1" fill="#FF6B6B" transform="rotate(20 259 44)" />
@@ -819,18 +901,38 @@
     <rect x="40" y="168" width="4" height="10" rx="2" fill="#D4956A" />
     <rect x="48" y="168" width="4" height="10" rx="2" fill="#D4956A" />
 
-    <!-- Dog Guau with explorer hat -->
-    <ellipse cx="118" cy="168" rx="16" ry="9" fill="#C4A882" />
-    <circle  cx="130" cy="159" r="12"         fill="#C4A882" />
-    <ellipse cx="126" cy="153" rx="4" ry="6"  fill="#A0784A" transform="rotate(-15 126 153)" />
-    <ellipse cx="135" cy="153" rx="4" ry="6"  fill="#A0784A" transform="rotate(15 135 153)" />
-    <ellipse cx="130" cy="165" rx="5" ry="3"  fill="#FDBCB4" />
-    <ellipse cx="130" cy="161" rx="3" ry="2"  fill="#5D3A1A" />
-    <!-- Explorer hat on dog -->
-    <ellipse cx="130" cy="149" rx="10" ry="4" fill="#C4A882" />
-    <rect x="123" y="149" width="14" height="6" rx="2" fill="#A0784A" />
-    <path class="dog-tail" d="M103 164 Q93 152 98 140" stroke="#C4A882" stroke-width="5" fill="none" stroke-linecap="round" />
-    <rect x="123" y="169" width="14" height="4" rx="2" fill="#FF6B6B" />
+    <!-- Sidekick with explorer hat / knight gear -->
+    <g class="sk-dog">
+      <ellipse cx="118" cy="168" rx="16" ry="9" fill="#C4A882" />
+      <circle  cx="130" cy="159" r="12"         fill="#C4A882" />
+      <ellipse cx="126" cy="153" rx="4" ry="6"  fill="#A0784A" transform="rotate(-15 126 153)" />
+      <ellipse cx="135" cy="153" rx="4" ry="6"  fill="#A0784A" transform="rotate(15 135 153)" />
+      <ellipse cx="130" cy="165" rx="5" ry="3"  fill="#FDBCB4" />
+      <ellipse cx="130" cy="161" rx="3" ry="2"  fill="#5D3A1A" />
+      <ellipse cx="130" cy="149" rx="10" ry="4" fill="#C4A882" />
+      <rect x="123" y="149" width="14" height="6" rx="2" fill="#A0784A" />
+      <path class="dog-tail" d="M103 164 Q93 152 98 140" stroke="#C4A882" stroke-width="5" fill="none" stroke-linecap="round" />
+      <rect x="123" y="169" width="14" height="4" rx="2" fill="#FF6B6B" />
+    </g>
+    <g class="sk-ramon" style="display:none" transform="translate(102,139) scale(0.44)">
+      <ellipse cx="40" cy="10" rx="6" ry="10" fill="#FF6B6B" />
+      <rect x="22" y="14" width="36" height="20" rx="8" fill="#9E9E9E" />
+      <rect x="22" y="14" width="36" height="8"  rx="6" fill="#BDBDBD" />
+      <rect x="28" y="27" width="24" height="5"  rx="2" fill="#424242" />
+      <circle cx="40" cy="45" r="11" fill="#FDBCB4" />
+      <circle cx="35" cy="43" r="2"  fill="#2E4A1E" />
+      <circle cx="45" cy="43" r="2"  fill="#2E4A1E" />
+      <path d="M33 48 Q37 51 40 48 Q43 51 47 48" stroke="#5D3A1A" stroke-width="2.5" fill="none" stroke-linecap="round" />
+      <path d="M35 52 Q40 55 45 52" stroke="#5D3A1A" stroke-width="1.5" fill="none" stroke-linecap="round" />
+      <rect x="26" y="54" width="28" height="20" rx="5" fill="#9E9E9E" />
+      <rect x="26" y="63" width="28" height="5"  fill="#8B4513" />
+      <rect x="29" y="72" width="8"  height="14" rx="2" fill="#757575" />
+      <rect x="43" y="72" width="8"  height="14" rx="2" fill="#757575" />
+      <path d="M12 54 L22 54 L22 66 L17 74 L12 66 Z" fill="#4D96FF" />
+      <path d="M12 54 L22 54 L22 66 L17 74 L12 66 Z" fill="none" stroke="white" stroke-width="1.5" />
+      <rect x="55" y="54" width="4"  height="28" rx="1" fill="#BDBDBD" />
+      <rect x="50" y="62" width="14" height="4"  rx="2" fill="#C4A882" />
+    </g>
   </svg>
 </template>
 
@@ -925,16 +1027,37 @@
       values="0;3;0;-2;0" dur="3s" repeatCount="indefinite"
       additive="sum" />
 
-    <!-- Dog Guau at castle entrance -->
-    <ellipse cx="240" cy="187" rx="16" ry="9"  fill="#C4A882" />
-    <circle  cx="252" cy="178" r="12"           fill="#C4A882" />
-    <ellipse cx="248" cy="172" rx="4" ry="6"   fill="#A0784A" transform="rotate(-15 248 172)" />
-    <ellipse cx="257" cy="172" rx="4" ry="6"   fill="#A0784A" transform="rotate(15 257 172)" />
-    <ellipse cx="252" cy="183" rx="5" ry="3"   fill="#FDBCB4" />
-    <ellipse cx="252" cy="179" rx="3" ry="2"   fill="#5D3A1A" />
-    <circle  cx="251" cy="178" r="1.2"          fill="white" />
-    <path class="dog-tail" d="M225 183 Q215 171 221 159" stroke="#C4A882" stroke-width="5" fill="none" stroke-linecap="round" />
-    <rect x="245" y="188" width="14" height="4" rx="2" fill="#FF6B6B" />
+    <!-- Sidekick at castle entrance -->
+    <g class="sk-dog">
+      <ellipse cx="240" cy="187" rx="16" ry="9"  fill="#C4A882" />
+      <circle  cx="252" cy="178" r="12"           fill="#C4A882" />
+      <ellipse cx="248" cy="172" rx="4" ry="6"   fill="#A0784A" transform="rotate(-15 248 172)" />
+      <ellipse cx="257" cy="172" rx="4" ry="6"   fill="#A0784A" transform="rotate(15 257 172)" />
+      <ellipse cx="252" cy="183" rx="5" ry="3"   fill="#FDBCB4" />
+      <ellipse cx="252" cy="179" rx="3" ry="2"   fill="#5D3A1A" />
+      <circle  cx="251" cy="178" r="1.2"          fill="white" />
+      <path class="dog-tail" d="M225 183 Q215 171 221 159" stroke="#C4A882" stroke-width="5" fill="none" stroke-linecap="round" />
+      <rect x="245" y="188" width="14" height="4" rx="2" fill="#FF6B6B" />
+    </g>
+    <g class="sk-ramon" style="display:none" transform="translate(232,158) scale(0.44)">
+      <ellipse cx="40" cy="10" rx="6" ry="10" fill="#FF6B6B" />
+      <rect x="22" y="14" width="36" height="20" rx="8" fill="#9E9E9E" />
+      <rect x="22" y="14" width="36" height="8"  rx="6" fill="#BDBDBD" />
+      <rect x="28" y="27" width="24" height="5"  rx="2" fill="#424242" />
+      <circle cx="40" cy="45" r="11" fill="#FDBCB4" />
+      <circle cx="35" cy="43" r="2"  fill="#2E4A1E" />
+      <circle cx="45" cy="43" r="2"  fill="#2E4A1E" />
+      <path d="M33 48 Q37 51 40 48 Q43 51 47 48" stroke="#5D3A1A" stroke-width="2.5" fill="none" stroke-linecap="round" />
+      <path d="M35 52 Q40 55 45 52" stroke="#5D3A1A" stroke-width="1.5" fill="none" stroke-linecap="round" />
+      <rect x="26" y="54" width="28" height="20" rx="5" fill="#9E9E9E" />
+      <rect x="26" y="63" width="28" height="5"  fill="#8B4513" />
+      <rect x="29" y="72" width="8"  height="14" rx="2" fill="#757575" />
+      <rect x="43" y="72" width="8"  height="14" rx="2" fill="#757575" />
+      <path d="M12 54 L22 54 L22 66 L17 74 L12 66 Z" fill="#4D96FF" />
+      <path d="M12 54 L22 54 L22 66 L17 74 L12 66 Z" fill="none" stroke="white" stroke-width="1.5" />
+      <rect x="55" y="54" width="4"  height="28" rx="1" fill="#BDBDBD" />
+      <rect x="50" y="62" width="14" height="4"  rx="2" fill="#C4A882" />
+    </g>
 
     <!-- Cloud -->
     <ellipse class="cloud" cx="40"  cy="55" rx="28" ry="12" fill="white" opacity="0.8" />
